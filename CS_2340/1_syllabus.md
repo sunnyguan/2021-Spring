@@ -8,11 +8,11 @@ This course introduces the concepts of computer architecture by going through mu
 
 ### Required Textbook
 
-*Computer Organization and Design - The Hardware/Software Interface 5th Edition, Patterson and Hennessey, Morgan-Kaufmann, 2012. ISBN: 978-0-12-407726-3.*
+[Computer Organization and Design 5th Edition](./tb_cs2340.pdf)
 
 ### Required Course Materials
 
-Assembler/Simulator: [**MARS MIPS**](https://courses.missouristate.edu/kenvollmar/mars)
+Assembler/Simulator: [MARS MIPS](https://courses.missouristate.edu/kenvollmar/mars)
 
 ### Grading Criteria
 
@@ -31,3 +31,8 @@ Assignment grading policy:
 No late homework or assignments.
 
 
+## Day 1: Jan 19
+
+Housekeeping
+
+1. No phones in class
