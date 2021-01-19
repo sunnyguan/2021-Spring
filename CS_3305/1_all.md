@@ -1,18 +1,18 @@
 # CS 3305
 
-Box types: note, warning, definition theorem
-
 ## Syllabus
 
-Syllabus: [CS 3305.HON Syllabus (Spring 2021)](./syllabus_3305.pdf)
+**Syllabus**: [CS 3305.HON Syllabus (Spring 2021)](./syllabus_3305.pdf)
 
-Textbook: [Mathematics for Computer Science](./tb_3305.pdf)
+**Textbook**: [Mathematics for Computer Science](./tb_3305.pdf)
 
-Meeting times: T/Th 11:30am-12:45pm
+**Meeting times**: T/Th 11:30am-12:45pm
 
-Last day of lecture: Thursday, May 6
+**Last day of lecture**: Thursday, May 6
 
-Grading Criteria:
+### Grading Criteria:
+
+Note: Honorlock will be used for all exams, 24 hour window available.
 
 1. Midterm 1: 20%
 2. Midterm 2: 20%
@@ -20,6 +20,8 @@ Grading Criteria:
 4. Homework: 25%
 5. Paper review: 10%
 6. Class participation: 5%
+
+See syllabus (linked above) for more information.
 
 \pagebreak
 
