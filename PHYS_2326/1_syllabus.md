@@ -96,11 +96,3 @@ $$\dfrac{F_e}{F_g} \approx 3.1 \times 10^{35}$$
 **Electric Field**
 
 We can measure the electric field produced an object with a test charge. The electric field is the force per unit charge. **Electric force** is produced by an electric field, it points in the same direction as the electric field for positive charges, and opposite direction for negative charges. All charges have an electric field, radially inwards for negative charge and radially outwards for positive charges. 
-
-\begin{mybox}{orange}
-
-\boxtitle{orange}{Theorem} \boxtitlenb{orange}{1.12}
-
-This is an important theorem.
-
-\end{mybox}

@@ -43,7 +43,11 @@ header-includes: |
   \newcommand{\squish}{\mathbin{\rightthreetimes}}
   \newcommand{\mods}[1] {\text{  (mod $#1$) }}
   \newcommand{\boxtitle}[2]{\textcolor{#1}{\textbf{#2}  }}
-  \newcommand{\boxtitlenb}[2]{\textcolor{#1}{#2}}
+  \newcommand{\boxsubtitle}[2]{\textcolor{#1}{#2}}
+  \newenvironment{orange}{\begin{mybox}{orange}}{\end{mybox}}
+  \newenvironment{green}{\begin{mybox}{green}}{\end{mybox}}
+  \newenvironment{blue}{\begin{mybox}{blue}}{\end{mybox}}
+  \newenvironment{red}{\begin{mybox}{red}}{\end{mybox}}
   ```
 pandoc-latex-environment:
   tcolorbox: [box]
@@ -51,3 +55,7 @@ pandoc-latex-environment:
   warning-box: [warning]
   definition-box: [definition]
   theorem-box: [theorem]
+  orange: [orange]
+  green: [green]
+  blue: [blue]
+  red: [red]

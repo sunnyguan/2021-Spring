@@ -4,24 +4,19 @@ This document will keep track of the various tools that I use in my Markdown fil
 
 For example, to get a simple orange box with an orange title, you can use this:
 
-\begin{mybox}{orange}
+:::orange
+\boxtitle{orange}{Title}
 
-    \boxtitle{orange}{Theorem 1}
-
-    Note that the blank line separating "begin\{mybox\}" and "boxtitle" is required for the colored title to work.
-
-\end{mybox}
+Some text here
+:::
 
 There is also the option to add in a colored "subtitle":
 
-\begin{mybox}{blue}
+:::blue
+\boxtitle{blue}{Theorem} \boxsubtitle{blue}{1.12}
 
-    \boxtitle{blue}{Definition}
-    \boxtitlenb{blue}{(see textbook)}
-
-    Make sure there is no blank space between the title and the subtitle if you want them to be on the same line.
-
-\end{mybox}
+$1+1=2$
+:::
 
 For more generic tcolorbox, you can try:
 
