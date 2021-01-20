@@ -42,7 +42,7 @@ Reference notes file: **Assembler.pdf** (on eLearning)
 
 Course will be using **MIPS**.
 
-### **Computer Architecture**: 
+### Computer Architecture: 
 
 **ISA**: Instruction Set Architecture
 
@@ -51,7 +51,7 @@ Course will be using **MIPS**.
 - **Von Neumann Principle** states that instructions and data resides in RAM (invented by Alan Turing)
 - The larger the size, the slower the speed
 
-### **MIPS RAM Memory Layout**
+### MIPS RAM Memory Layout
 
 - Reserved
 - Stack $\Lra$ Dynamic Data $\Longleftarrow$ Heap
@@ -59,7 +59,7 @@ Course will be using **MIPS**.
 - Text
 - Reserved
 
-### **Instruction Execution**
+### Instruction Execution
 
 - **Data**: flows between Memory and CPU (both ways)
 - **Instructions**: only flows from **Memory** to CPU
@@ -70,7 +70,7 @@ Course will be using **MIPS**.
     3. Execute instruction (may change PC)
     4. **ONLY** terminated by interrupts from outside source
 
-### **Registers**
+### Registers
 
 There are 32 registers, and each of them are 32 bits long. All ALU instructions have 3 addresses and each is 5 bits, for example:
 
@@ -80,7 +80,7 @@ ADD $1, $2, $3
 
 There are many reserved registers so be careful when choosing them. 
 
-### **Types of Instructions**
+### Types of Instructions
 
 1. **R-Type** (ALU functions): op, rs, rt, rd (result), shamt, funct
     1. Shift, add, multiply, divide, etc.
@@ -95,7 +95,7 @@ There are many reserved registers so be careful when choosing them.
 
 All RISC instructions take one **clock cycle** to execute.
 
-Execution example:
+Execution example: is
 
 (Note: `Mem`=read from memory, `WB`=Write Back to memory)
 
@@ -108,3 +108,8 @@ IF -> ID -> IX -> Mem -> WB (I300)
 Split instructions into smaller chunks so each can execute in one clock cycle. However, there are issues relating to dependencies between different instructions which causes delays. Goal is to get maximum throughput through the MIPS pipeline.
 
 Coming up next: performance evaluation and some Law.
+
+\pagebreak
+
+## Day 2: Jan 21
+
