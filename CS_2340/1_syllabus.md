@@ -95,7 +95,7 @@ There are many reserved registers so be careful when choosing them.
 
 All RISC instructions take one **clock cycle** to execute.
 
-Execution example: is
+Execution example:
 
 (Note: `Mem`=read from memory, `WB`=Write Back to memory)
 
