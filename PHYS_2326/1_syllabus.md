@@ -73,7 +73,9 @@ Protons and electrons have the same magnitude charge, which is set as a natural 
 
 *Charging by induction* happens when there is an imbalance of positive and negative charges in an object because of an external force. If the object is connected to ground, the object will now become positively charged because electrons moved to ground.
 
-:::theorem
+:::green
+\boxtitle{green}{Definition}
+
 **Coulomb's Law**: for charges $q_1$ and $q_2$ separated by a distance $r$, the magnitude of the electric force on either charge is proportional to the product $q_1 q_2$ and inversely proportional to $r^2$.
 
 $$F=\dfrac{1}{4\pi \epsilon_0}\dfrac{\abs{q_1q_2}}{r^2}$$
@@ -83,7 +85,9 @@ $$\dfrac{1}{4\pi \epsilon_0}=9 \times 10^9 N \cdot \frac{m^2}{c^2}$$
 Where $\epsilon_0$ is electrical permittivity.
 :::
 
-:::definition
+:::blue
+\boxtitle{blue}{Example}
+
 **Example 1**: An alpha particle has mass $m=6.64 \times 10^{-27}$ kg and charge $q=2e=3.2 \times 10^{-19}C$. Compare the magnitude of the electric repulsion between the two $\alpha$ particles with that of the gravitational attraction between them.
 
 $$F_e = \dfrac{1}{4\pi \epsilon_0} \dfrac{q^2}{r^2}$$
