@@ -160,8 +160,8 @@ Note: $M^2$ represents connection between vertices separated by length 2.
 
 Examples of trees include computer file systems, tournament brackets, dictionary search trees, etc. 
 
-:::blue
-\boxtitle{blue}{Tournament Example}
+:::pink
+\boxtitle{pink}{Tournament Example}
 
 **Problem**: In an elimination tournament bracket, how many games are played before the winner emerges? 
 

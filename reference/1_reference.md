@@ -12,28 +12,28 @@ Some text here
 
 There is also the option to add in a colored "subtitle":
 
-:::blue
-\boxtitle{blue}{Theorem} \boxsubtitle{blue}{1.12}
+:::green
+\boxtitle{green}{Theorem} \boxsubtitle{green}{1.12}
 
 $1+1=2$
 :::
 
-For more generic tcolorbox, you can try:
+Other colors:
 
-:::note
-A note
+:::red
+\boxtitle{red}{Warning}
+
+Warning!
 :::
 
-:::definition
-A definition
+:::blue
+\boxtitle{blue}{Definition}
+
+Some definition
 :::
 
-:::theorem
-A theorem
-:::
+:::pink
+\boxtitle{pink}{Example}
 
-:::warning
-A warning
+For example
 :::
-
-These are faster to write, but doesn't allow you to customize the title.

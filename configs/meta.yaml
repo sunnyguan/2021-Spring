@@ -14,13 +14,10 @@ header-includes: |
   \usepackage{xcolor}
 
   \definecolor{orange}{HTML}{E0862A}
-  \definecolor{lightorange}{HTML}{F9F8E5}
   \definecolor{green}{HTML}{31B300}
-  \definecolor{lightgreen}{HTML}{F5FAFA}
   \definecolor{red}{HTML}{F70405}
-  \definecolor{lightred}{HTML}{FEF9F2}
   \definecolor{blue}{HTML}{1010FE}
-  \definecolor{lightblue}{HTML}{F3FAFE}
+  \definecolor{pink}{HTML}{FF69B4}
 
   \newtcolorbox{mybox}[3][]{
       colback=#2!5,
@@ -29,11 +26,6 @@ header-includes: |
       arc=5pt,
       outer arc=5pt,
   }
-  \newtcolorbox{note-box}{colback=lightorange,arc=5pt,outer arc=5pt,colframe=orange,title=Note}
-  \newtcolorbox{warning-box}{colback=lightred,arc=5pt,outer arc=5pt,colframe=red,title=Warning}
-  \newtcolorbox{definition-box}{colback=lightblue,arc=5pt,outer arc=5pt,colframe=blue,title=Definition}
-  \newtcolorbox{theorem-box}{colback=lightgreen,arc=5pt,outer arc=5pt,colframe=green,title=Theorem}
-
   \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 
   \newcommand{\lra}{\longrightarrow}
@@ -42,20 +34,19 @@ header-includes: |
   \newcommand{\coprime}{\mathrel{\bot}}
   \newcommand{\squish}{\mathbin{\rightthreetimes}}
   \newcommand{\mods}[1] {\text{  (mod $#1$) }}
+
   \newcommand{\boxtitle}[2]{\textcolor{#1}{\textbf{#2}  }}
   \newcommand{\boxsubtitle}[2]{\textcolor{#1}{#2}}
+
   \newenvironment{orange}{\begin{mybox}{orange}}{\end{mybox}}
   \newenvironment{green}{\begin{mybox}{green}}{\end{mybox}}
   \newenvironment{blue}{\begin{mybox}{blue}}{\end{mybox}}
   \newenvironment{red}{\begin{mybox}{red}}{\end{mybox}}
+  \newenvironment{pink}{\begin{mybox}{pink}}{\end{mybox}}
   ```
 pandoc-latex-environment:
-  tcolorbox: [box]
-  note-box: [note]
-  warning-box: [warning]
-  definition-box: [definition]
-  theorem-box: [theorem]
   orange: [orange]
   green: [green]
   blue: [blue]
   red: [red]
+  pink: [pink]
