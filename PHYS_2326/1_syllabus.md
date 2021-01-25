@@ -1,6 +1,4 @@
-# PHYS 2326
-
-## Syllabus
+# Syllabus
 
 **Textbook**: [University Physics](./tb_2326.md)
 
@@ -8,9 +6,9 @@
 
 **Syllabus**: [Syllabus](./syllabus_2326.pdf)
 
-## Day 1: 1/20
+# Day 1: 1/20
 
-### General Information
+## General Information
 
 The main book will be *University Physics*, homework are pulled from the 14th Edition but older/newer versions are fine. Homework is worth 20% of grade so be sure to keep track of deadlines.
 
@@ -36,7 +34,7 @@ The final exam is held *before* the actual finals week so we can finish early. T
 
 Honorlock usage will be decided later by the entire physics department.
 
-### Lecture
+## Lecture
 
 **Electromagnetic force** is one of the fundamental forces in nature:
 
@@ -100,3 +98,40 @@ $$\dfrac{F_e}{F_g} \approx 3.1 \times 10^{35}$$
 **Electric Field**
 
 We can measure the electric field produced an object with a test charge. The electric field is the force per unit charge. **Electric force** is produced by an electric field, it points in the same direction as the electric field for positive charges, and opposite direction for negative charges. All charges have an electric field, radially inwards for negative charge and radially outwards for positive charges. 
+
+# Day 2: 1/25
+
+## Review
+
+1. Mastering Physics (Pearson) due Saturday
+2. **Coulomb's Law** is important
+
+## Electric Field
+
+:::orange
+\boxtitle{orange}{Formula}
+
+If something is charged, then there is an *aura* of around it called the **electric field**. 
+
+$$E=\dfrac{F_0}{q_0}=\dfrac{1}{4\pi \epsilon _0} \dfrac{q}{r^2}$$
+
+The electric field of a positive charge is radially outwards, while the electric field of a negative charge is radially inwards. Remember to use a **positive** test charge.
+:::
+
+**Cool fact**: sharks can sense weak electric fields by muscle contractions of their prey.
+
+**Electric field lines** represents the tangent of the electric field direction at each individual point along the line. For a single positive charge, the lines will be straight and radially outward, so the tangents (directions) are all the same for each direction. However, for fields with two opposite charges, there is a lot more variation. 
+
+:::green
+\boxtitle{green}{Example}
+
+A point charge $q=-8.0 nC$ is located at the origin, find the electric field vector at the fidl point $x=1.2m$ and $y=-1.6m$.
+
+**Solution**: 
+
+Since $r=\sqrt{x^2+y^2}=2m$, the unit vector is normalized to $\hat{r}=\dfrac{r}{\abs{r}}=(0.6, -0.8)$. $E=\dfrac{1}{4\pi \epsilon_0}\dfrac{q}{r^2} \hat{r}=(-11 \dfrac{N}{c}, 14 \dfrac{N}{c})$
+:::
+
+## Electric Dipoles
+
+**Electric dipole** is a pair of point charges having equal but opposite sign and separated by a distance. Water molecules ($H_2O$) is an example of a dipole, since the two hydrogen atoms' electrons stay in the oxygen atom more often, so the hydrogen sides have a slight positive charge and the oxygen side has a slight negative charge. The dipole momentum points from negative to positive, so it points towards the hydrogen atoms in this case.
