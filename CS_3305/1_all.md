@@ -169,3 +169,75 @@ Examples of trees include computer file systems, tournament brackets, dictionary
 
 Note: this is the *easier* way to solve the problem, you can also solve the problem using geometric series or by noticing that a tree has $n-1$ edges.
 :::
+
+# Day 3: 1/26
+
+## Graphs
+
+:::blue
+\boxtitle{blue}{Graph Terminology}
+
+- **Graphs** are composed of a set of vertices and a set of edges.
+- The **in-degree** of $v$ is the number of edges ending at $v$
+- The **out-degree** of $v$ is the number of edges starting at $v$
+
+Note that the sum of all in-degrees is the same as the sum of all out-degrees.
+:::
+
+**Directed Multigraph** have multiple directed edges for the same pair of vertices. The **multiplicity** of edge $(u,v)$ is the number of directed edges from $u$ to $v$.
+
+**Walk** is an alternating sequence of vertices and edges, basically a path from one vertex to another vertex where each consecutive pairs of vertices are connected by an edge. Vertices and edges can appear more than once, and the **length** of the walk is the number of edges in the walk.
+
+**Paths** are a *subset* of walks, where no vertex is visited more than once.
+
+**Closed walks** start and end at the same vertex
+
+**Cycle** is a closed walk where all vertices are distinct except for the first and last vertex.
+
+:::orange
+\boxtitle{orange}{Theorem}
+
+A shortest walk from one vertex to another is a path.
+
+**Proof by contradiction**: if there is a cycle in the path, we can remove the cycle and obtain a shorter walk from the source to the destination vertex.
+:::
+
+**Articulation point** is a vertex where removing it would split the graph into two disconnected components. 
+
+**Cut-set** is the minimum subset of edge that you should remove to split the graph into two.
+
+**Flow networks**: graph where edge weights represent the flow from one vertex to another
+
+:::orange
+\boxtitle{orange}{Handshaking Theorem}
+
+If $G=(V,E)$ is a undirected graph with $m$ edges, then 
+
+$$2m = \sum \text{deg} (v)$$
+:::
+
+:::pink
+\boxtitle{pink}{Degree of Vertices Theorem}
+
+An undirected graph has an even number of vertices of odd degree.
+
+**Proof 1**:
+
+Whenever we're adding an addition vertex, we can add 0 to $n$ edges to the existing graph (where $n$ is the number of vertices in the original graph). If we add an edge to an old vertex, then the number of vertices with odd degree can be changed in any of the 3 ways:
+
+1. $+2$ if the new vertex was even degree (now odd) and old vertex was also even degree (now odd)
+2. $0$ if either the new vertex was even (now odd) **or** the old vertex was even (now odd)
+3. $-2$ if the new vertex was odd (now even) and old vertex was also odd (now even)
+
+Thus, the number of odd vertices always increases by an even number. Since the number of odd vertices starts at 0 (when there are no vertices), the number of odd vertices is always even.
+
+**Proof 2**: 
+
+From the **Handshaking Theorem**, we have the following equation:
+
+$$2m = \sum \text{deg} (v) = \sum_{v \in v_1} \text{deg} (v) + \sum_{v \notin v_1} \text{deg} (v)$$
+
+Where $v_1$ is the set of vertices with odd degree.
+
+Since the second term in the equation consists of any number of even degree, it has to be even as well. Since $2m$ (on the left side) is always even, we know that the middle term (sum of degrees of odd vertices) must be even. Since the degree for all of the vertices in $v_1$ is odd, the number of these vertices must be even for the product to be even.
+:::
