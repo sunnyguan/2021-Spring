@@ -216,3 +216,62 @@ CPU Time = IC * CPI / (Clock Rate)
 ```
 
 Where IC = instructions per program (instruction count) and CPI = cycles/instruction.
+
+# Day 3: 1/26
+
+:::orange
+\boxtitle{orange}{CPU Time}
+
+$$\textbf{CPU Time} = \dfrac{Seconds}{Program} = \dfrac{Instructions}{Program} \cdot \dfrac{Cycles}{Instructions} \cdot \dfrac{Seconds}{Cycle}$$
+
+$$\textbf{CPU Time} = IC \cdot CPI \cdot \dfrac{1}{Clock Rate}$$
+
+**IC** is instruction count and **CPI** is cycles per instruction.
+:::
+
+\begin{table}[htpb]
+    \centering
+    \caption{Example of Calculating CPI}
+    \label{tab:label}
+    \begin{tabular}{| c | c | c | c | c |}
+        \hline
+        \text{Op-Code} & \text{Frequency} & \text{Cycles} & \text{CPI (i)} & \text{Time} \\
+        \hline
+        \text{ALU} & 50\% & \text{1} & \text{0.5} & 33\% \\
+        \hline
+        Load & 20\% & 2 & 0.4 & 27\% \\
+        \hline
+        Store & 10\% & 2 & 0.2 & 13\% \\
+        \hline
+        Branch & 20\% & 2 & 0.4 & 27\% \\
+        \hline
+    \end{tabular}
+\end{table}
+
+The overall CPI is the sum of all CPI entries:
+
+$$CPI = 0.5 + 0.4 + 0.2 + 0.4 = 1.5$$
+
+In this case, we can see that we spent half the time on ALU, so we should **make the common case fast**. This is because architects might try to optimize some system, but later realize that there is little speed up. To prevent that, we should measure the usage of those operations (ALU in this case) before optimizing. 
+
+Since we always have trade-offs when making decisions on what to improve, we should always prioritize the more frequent events (ALU for example) over the less frequent cases (Store for example). The rule of thumb is to only improve if the benefit is **over 1%**.
+
+:::pink
+\boxtitle{pink}{Improvement Examples}
+
+Let's say that division was improved by a factor of 2 for its runtime, then the speedup is
+
+$$Speedup = \dfrac{1}{(1-0.03) + \frac{0.03}{2}} = 1.015$$
+
+Since 1.015 means a $1.5\%$ improvement, it is a reasonable improvement to consider.
+:::
+
+**Note**: using arithmetic mean to compare the runtimes of different programs on different systems is not a good idea. It could remove drastic differences that could be seen by directly observing the data points (for example, 1 very high run time and 9 very low run time).
+
+The better (and usual) approach to **normalizing** the runtimes is to use a *reference machine*, and calculate the other runtimes by multiplying by the reciprocal of the reference runtime. 
+
+**Geometric Mean** is a metric that does not require a reference machine. It is accepted by the results does not relate easily to well-known metrics (MIPS, MFLOPS, IPC, CPI).
+
+Another metric is the arithmetic mean of **IPC** (instructions per cycle). The opposite is using the sum of **CPI** (cycles per instruction). Since these two are reciprocals, the resulting metrics are also reciprocals.
+
+**Note**: For notes on signed/unsigned numbers, see `Numbers.pdf` on eLearning.

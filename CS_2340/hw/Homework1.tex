@@ -1,0 +1,163 @@
+% 
+% LaTeX Problem Set Template by Sachin Padmanabhan
+% I created this when I was a freshman in CS 103,
+% and I continue to use it to this day.
+%
+% Hope you enjoy!
+%
+% There may be problems with this template.
+% If so, feel free to contact me.
+%
+
+% Updated for Fall 2018 by Michael Zhu
+
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathdots}
+\usepackage[pdftex]{graphicx}
+\usepackage{fancyhdr}
+\usepackage[margin=1in]{geometry}
+\usepackage{multicol}
+\usepackage{bm}
+\usepackage{listings}
+\PassOptionsToPackage{usenames,dvipsnames}{color}  %% Allow color names
+\usepackage{pdfpages}
+\usepackage{algpseudocode}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\usepackage{inconsolata}
+\usepackage{framed}
+\usepackage{wasysym}
+\usepackage[thinlines]{easytable}
+\usepackage{wrapfig}
+\usepackage{hyperref}
+\usepackage{cancel}
+\usepackage{tabu}
+\usepackage{tcolorbox}
+
+\title{Homework 1}
+\author{YOUR NAME}
+\date{1/24/2021}
+
+\lhead{YOUR NAME}
+\chead{Homework 1}
+\rhead{}
+\lfoot{}
+\rfoot{\thepage}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\setlength{\parindent}{0pt}
+
+\pagestyle{fancy}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+% start MZ
+\usetikzlibrary{automata,positioning}
+\let\oldemptyset\emptyset
+\renewcommand{\emptyset}{\text{\O}}
+\renewcommand\qedsymbol{$\blacksquare$}
+\newenvironment{prf}{{\bfseries Proof.}}{\qedsymbol}
+\renewcommand{\emph}[1]{\textit{\textbf{#1}}}
+\newcommand{\annotate}[1]{\textit{\textcolor{blue}{#1}}}
+\usepackage{stmaryrd}
+% end MZ
+\usepackage{pxfonts}
+
+\lstset{language=Python,
+    basicstyle=\ttfamily,
+    keywordstyle=\bfseries,
+    showstringspaces=false,
+    morekeywords={include, printf}
+}
+
+\newenvironment{shadedbox}{\begin{tcolorbox}[width=\linewidth, sharp corners=all, colback=white!95!black]}{\end{tcolorbox}}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+
+\begin{document}
+
+\maketitle
+
+\section*{1.}
+Consider two different implementations, M1 and M2, of the same instruction set. There are three classes of instructions (A, B, and C) in the instruction set. M1 has a clock rate of 80 MHz and M2 has a clock rate of 100 MHz. The average number of cycles for each instruction class and their frequencies (for a typical program) are as follows:\\
+
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Instruction Class} & \textbf{Machine M1 - Cycles/Instruction Class} & \textbf{Machine M2 - Cycles/Instruction Class} & \textbf{Frequency} \\ \hline
+A & 2 & 2 & 60\% \\ \hline
+B & 2 & 5 & 30\% \\ \hline
+C & 4 & 4 & 10\% \\ \hline
+\end{tabular}
+
+\vspace{0.3cm}
+\hrule
+\vspace{0.3cm}
+\textbf{A.} Calculate the average CPI for each machine, M1, and M2.
+\begin{shadedbox}
+Work and answer goes here
+\end{shadedbox}
+\textbf{B.}  Calculate the average MIPS ratings for each machine, M1 and M2.
+\begin{shadedbox}
+Work and answer goes here
+\end{shadedbox}
+
+\pagebreak
+
+\section*{2.}
+(Amdahls law question) Suppose you have a machine that executes a program consisting of 50\% floating point multiply, 20\% floating point divide, and the remaining 30\% are from other instructions.
+\vspace{0.3cm}
+\hrule
+\vspace{0.3cm}
+\textbf{A.} Management wants the machine to run 4 times faster. You can make the divide run at most 3 times faster and the multiply run at most 8 times faster. Can you meet managements goal by making only one improvement, and which one?
+\begin{shadedbox}
+Work and answer goes here
+\end{shadedbox}
+\textbf{B.} Dogbert has now taken over the company removing all the previous managers. If you make both the multiply and divide improvements, what is the speed of the improved machine relative to the original machine?
+\begin{shadedbox}
+Work and answer goes here
+\end{shadedbox}
+
+\pagebreak
+
+\section*{3.}
+Suppose that we can improve the floating point instruction performance of a machine by a factor of 15 (the same floating point instructions run 15 times faster on this new machine). What percent of the instructions must be floating point to achieve a Speedup of at least 4?
+\vspace{0.3cm}
+\hrule
+\vspace{0.3cm}
+\begin{shadedbox}
+Work and answer goes here
+\end{shadedbox}
+
+\pagebreak
+
+\section*{4.}
+Just like we defined MIPS rating, we can also define something called the MFLOPS rating which stands for Millions of Floating Point operations per Second. If Machine A has a higher MIPS rating than that of Machine B, then does Machine A necessarily have a higher MFLOPS rating in comparison to Machine B? 
+\vspace{0.3cm}
+\hrule
+\vspace{0.3cm}
+\begin{shadedbox}
+Work and answer goes here
+\end{shadedbox}
+
+\pagebreak
+
+\section*{5.}
+Computer A has an overall CPI of 1.3 and can be run at a clock rate of 600MHz. Computer B has a CPI of 2.5 and can be run at a clock rate of 750Mhz. We have a particular program we wish to run. When compiled for computer A, this program has exactly 100,000 instructions. How many instructions would the program need to have when compiled for Computer B, in order for the two computers to have exactly the same execution time for this program?
+\vspace{0.3cm}
+\hrule
+\vspace{0.3cm}
+\begin{shadedbox}
+Work and answer goes here
+\end{shadedbox}
+
+
+\end{document}
