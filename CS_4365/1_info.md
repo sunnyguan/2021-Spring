@@ -252,3 +252,45 @@ Advantages of **BFS**: Optimal solution
 Advantages of **DFS**: Space efficient
 
 Combining the two, we get **iterative deepening**, which we will explore next lecture.
+
+# Day 3: 1/27
+
+**Tree Search**: does not check if a node has been visited before
+
+**Graph Search**: checks if a node has been visited before prior to inserting
+
+Even though it looks like graph searches will always be superior, we need to know that graph search needs to keep a hash table/set to remember what nodes have been visited before. This might be be very costly with regards to memory space.
+
+## Uniform-Cost Search
+
+**Uniform-Cost Search** is similar to BFS, but we always expand the lowest-cost node from the initial state. This cost is called the **g-cost**, and `g(Successor(n)) > g(n)` is a *necessary condition* for completeness as well as a *sufficient condition* for optimality.
+
+## Iterative Deepening
+
+**Strategy**: Increase the artificial limit by 1 every iteration, and traverse using that limit with DFS. 
+
+Even though it has good space complexity, is optimal, and is complete, the downside is that the shallower nodes are being checked over and over again during each iterative deepening iteration. 
+
+## Bidirectional Search
+
+Search from both the start and the goal nodes. 
+
+If we use BFS from both ends, then the time complexity is $O(b^{\frac{d}{2}})$ while the time complexity fr normal BFS is $O(b^{d+1})$. One example is that if the branching factor is 10 and the depth is at 6, BFS needs over 1 million nodes and bidirectional search only needs around 2,000.
+
+The limitation is that we need a *predecessor* function to go backwards, and we might also run into problems with a lot of goal states and having to do bidirectional searches for all of them.
+
+## Generic *Best*-First Search
+
+Similar to BFS, but use a function `f` that determines the cost of a node based on how "promising" it is. The difference between this and a BFS/DFS is that we are using a heap. This is because we are selecting the node with the minimum "cost" (most promising), which can be implemented as a heap.
+
+If we view DFS and BFS as a specific form of the generic best-first search, we can see that BFS has a function of `f(n)=depth(n)` since the lowest depth nodes are scanned first, then the next level, and etc. On the other hand, DFS has a function of `f(n)=1/depth(n)`, since the largest depth node is explored first. 
+
+The key idea is to notice that if we can find a function `f(n)` that can help us find the path in the shortest time, then we would have the optimal searching algorithm for that problem.
+
+### Informed Methods: Heuristic Search
+
+If we have a function `h(n)=estimated cost of the cheapest path from n to target`, then we can define the `f` function as `f(n)=g(n)+h(n)`, where `g(n)` is the distance from the initial state to the current state. Note that `g(n)` is *known* (since we traversed that path from initial to current already), and `h(n)` is an estimate. This approach is known as **A* Search**.
+
+If we define `f(n)=h(n)`, this is known as the **Greedy Best-First Search**.
+
+For the 8-puzzle problem, one possible heuristic function is the sum of each Manhattan Distance, another is simply the number of incorrectly placed blocks.
