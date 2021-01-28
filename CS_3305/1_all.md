@@ -241,3 +241,30 @@ Where $v_1$ is the set of vertices with odd degree.
 
 Since the second term in the equation consists of any number of even degree, it has to be even as well. Since $2m$ (on the left side) is always even, we know that the middle term (sum of degrees of odd vertices) must be even. Since the degree for all of the vertices in $v_1$ is odd, the number of these vertices must be even for the product to be even.
 :::
+
+# Day 4: 1/28
+
+## Adjacency Matrix
+
+Adjacency Matrix uses a $n \times n$ matrix, where the value at $(i, j)$ represents if there is a connection between $i$ and $j$ in the graph. 
+
+1. If the graph is undirected, then the matrix is symmetric.
+2. Multiplying the adjacency matrix by itself represents the connections between vertices that are 2 edges apart
+3. To find a shortest path between two vertices, we can keep multiplying A by itself until $(i, j)$ is non-zero, which must be the shortest path. Note that this has a $O(N^4)$ runtime.
+4. Bellman-Ford finds shortest paths between all pairs of vertices
+
+## Directed Acyclic Graph (DAG)
+
+**DAG** is a directed graph with no cycles, commonly used to represent scheduling constraints. For example, edge $(u, v)$ could mean that task $u$ must happen before $v$ (which is transitive). If we can assign two threads for example, what is the best way to schedule the tasks so we can finish earliest?
+
+**Topological Sort**: any total ordering that is consistent with the *partial ordering* in the DAG
+
+**Uniprocessor Scheduling**: any top sort
+
+**Parallel Scheduling**: tasks with no constraints between them can be scheduled in parallel
+
+**Critical Path**: the longest chain in the DAG
+
+Note that if the DAG is your course sequence, the critical path dictates the earliest you can graduate.
+
+To route in a binary tree between two nodes $x$ and $y$, we can find the **lowest common ancestor** $z$, and find the route from $x$ to $z$ and $y$ to $z$, finally their sum will be the shortest path between $x$ and $y$.
