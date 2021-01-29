@@ -275,3 +275,37 @@ The better (and usual) approach to **normalizing** the runtimes is to use a *ref
 Another metric is the arithmetic mean of **IPC** (instructions per cycle). The opposite is using the sum of **CPI** (cycles per instruction). Since these two are reciprocals, the resulting metrics are also reciprocals.
 
 **Note**: For notes on signed/unsigned numbers, see `Numbers.pdf` on eLearning.
+
+# Day 4: 1/28
+
+## Number Representation
+
+Using 16-bit 2's complement system:
+
+1. `-32768: 1000,0000,0000,0000`
+2. `-32767: 1000,0000,0000,0001`
+3. `-1: 1111,1111,1111,1111`
+4. `0: 0000,0000,0000,0000`
+5. `1: 0000,0000,0000,0001`
+6. `32766: 0111,1111,1111,1110`
+7. `32767: 0111,1111,1111,1111`
+
+In any **radix-complement system**, the most negative number (-32768 in this case) is always one "larger" than the most positive number (32767 in this case).
+
+**ulp**: unit in the least significant position.
+
+For Hex numbers, use the prefix `0x`; for binary, use `0b`.
+
+## IEEE Single Precision Floating Point
+
+Three components:
+
+1. Sign bit `s`
+2. Exponent `e`
+3. Fraction `f`
+
+We will learn more about this later.
+
+**Register Naming Convention**: check notes for detailed table on which registers are for what.
+
+Check notes for list of commands, will start trying them out next week.
