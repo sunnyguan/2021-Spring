@@ -294,3 +294,47 @@ If we have a function `h(n)=estimated cost of the cheapest path from n to target
 If we define `f(n)=h(n)`, this is known as the **Greedy Best-First Search**.
 
 For the 8-puzzle problem, one possible heuristic function is the sum of each Manhattan Distance, another is simply the number of incorrectly placed blocks.
+
+# Day 5: 2/3
+
+:::blue
+\boxtitle{blue}{Generic Best-First Search}
+
+Reviewed **Generic Best-First Search**: what is the cost function for each of these functions?
+
+- **BFS**: $f(n)=depth(n)$
+- **DFS**: $f(n)=\frac{1}{depth(n)}$
+- **UCS**: $f(n)=g(n)$
+- **Greedy**: $f(n)=h(n)$
+- **A\***: $f(n)=g(n)+h(n)$
+:::
+
+## Heuristics
+
+For example, if our task is to find a path from city A to city B, one possible heuristic is using the straight-line distance between two cities. The **greedy** approach would rely solely on the heuristic, and thus pick the closest city (in terms of straight line distance) in each iteration. 
+
+:::red
+\boxtitle{red}{Graph vs Tree Search}
+
+It is important to note that in **tree search**, we do not visit nodes that have been visited already. In **graph search**, we are allowed to do that. Graph search is more space efficient because we don't have to keep track of what nodes have been visited before.
+:::
+
+Continuing from the example above, A-star would take into account the path from the source vertex (which is $g(n)$). In this example, it is able to return the lowest-cost path.
+
+## Admissible Heuristic
+
+In order for A-star to always return the lowest-cost solution, the heuristic must be **admissible**. This means that $h(n) \leq h^*(n)$ for all nodes $n$ ($h^*(n)$ is the actual cost to reach the goal state from $n$). If this is true, A-star will never return a suboptimal goal.
+
+Another way of putting it is that admissibility guarantees that we never overestimate the cost of the path.
+
+Note that the **perfect heuristic** is exactly equal to the actual cost, and the **trivial heuristic** is just $h(n)=0$ because it is never overestimating the cost ($h^*(n) \geq 0$).
+
+## Consistency of Heuristics
+
+Heuristic "arc" cost $\leq$ actual cost for each arc. This is to ensure that a child node does not have a lower $h(n)=f(n)+g(n)$ than its parent. Note that if you use graph search, you need **consistency** for A-star to optimal. If you use tree search, **admissibility** alone is enough to guarantee optimality.
+
+For example, in the 8-puzzle problem, the *out-of-place* heuristic is always less than or equal to the *Manhattan* heuristic. This means that the Manhattan heuristic is better to use. 
+
+## A-Star Analysis
+
+A* is optimally efficient (expand the least amount of nodes), is complete, but has exponential complexity due to its bread-first nature.

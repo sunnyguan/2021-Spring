@@ -309,3 +309,19 @@ We will learn more about this later.
 **Register Naming Convention**: check notes for detailed table on which registers are for what.
 
 Check notes for list of commands, will start trying them out next week.
+
+# Day 5: 2/2
+
+## Registers
+
+There are 32 registers, and each region have their special designated usage. For example, the first (0th) register is always the constant value 0.
+
+There are three different formats of instructions, but we will mostly use **R-Types**, but also use **I-Types** for loads and stores. 
+
+### R-Type
+
+`op, rs, rt, td, sh, funct`
+
+For example, `ADD $t6, $t7, $t8` means to add `t7` and `t8` and store the result in `t6`. 
+
+There are a ton of different operations, we'll get back to them later in real examples.
