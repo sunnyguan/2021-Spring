@@ -268,3 +268,26 @@ Adjacency Matrix uses a $n \times n$ matrix, where the value at $(i, j)$ represe
 Note that if the DAG is your course sequence, the critical path dictates the earliest you can graduate.
 
 To route in a binary tree between two nodes $x$ and $y$, we can find the **lowest common ancestor** $z$, and find the route from $x$ to $z$ and $y$ to $z$, finally their sum will be the shortest path between $x$ and $y$.
+
+# Day 5: 2/4
+
+## Butterfly Network
+
+A butterfly network with $N=2^1$ has 2 inputs and 2 outputs, and each of the two inputs point to both of the two outputs. Then, for each following butterfly network, we add in two sets of inputs with $2^n$ nodes each. For each of these new nodes, we connect them to the direct connection from the $2^{n-1}$ network, as well as the opposite connection from the other duplicate (see lecture picture if not clear).
+
+## Comparison
+
+||Complete Binary Tree|2-D Array|Butterfly|
+|-|-|-|-|
+|Diameter|$2 \log N + 2$|$2N$|$\log N + 2$|
+|Switch Size|3x3|2x2|2x2|
+|Number of Switches|$2N-1$|$N^2$|$N(\log N + 1)$|
+|Congestion|$N$|$2$|$\sqrt{N}$ or $\sqrt{N/2}$|
+
+Diameter accounts for latency in the best condition (no congestion), switch size accounts for the size, number of switches also contributes to material cost, and congestion (average delay in worse condition).
+
+A variation of the Butterfly Network is Benes Network, and two additional layers of nodes are added to both the left and the right of the previous layer. The benefit is that there is no congestion (1), at the cost of slightly higher diameter and number of switches (constant factor).
+
+## Graph Isomorphism
+
+Graphs $G$ and $H$ are isomorphic if each vertex can be mapped to exactly one other vertex on the opposite graph and retain the same connections. 
