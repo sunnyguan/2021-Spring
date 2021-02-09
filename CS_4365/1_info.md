@@ -338,3 +338,35 @@ For example, in the 8-puzzle problem, the *out-of-place* heuristic is always les
 ## A-Star Analysis
 
 A* is optimally efficient (expand the least amount of nodes), is complete, but has exponential complexity due to its bread-first nature.
+
+# Day 6: 2/8
+
+## Inventing Heuristics
+
+Breaking down the 8-puzzle problem:
+
+a. A tile can move from A to B if A is adjacent to B: Manhattan distance
+b. A tile can move from A to B if B is blank
+c. A tile can move from A to B regardless: number of misplaced tiles
+
+We can take any of these three perfect heuristics, and they will be admissible for the original problem. Thus, we can then take the maximum of these three since it would dominate the others.
+
+Optimized A* can only go up to around $10^{100}$ states; however, real world problems have up to $10^{30,000}$ states. To handle more states, we have to give up some information. With this in mind...
+
+## Local Search Method
+
+In this method, we do not care about the path and only care about the goal state. Thus, we do not need to store the parent structures. 
+
+However, we generally need a complete state description. In the 8-queens problem, this means that we start with a complete board that already has the 8 queens. 
+
+## Hill Climb
+
+This method is quite naive and only moves up hill, even if there is a higher global maxima on the downhill side. 
+
+## GSAT vs Davis-Putnam
+
+GSAT always outperforms Davis-Putnam in boolean expression problems. Davis-Putnam performs a DFS search which could take a lot longer. Since we only need one solution, GSAT would be complete in that regard and be able to find the solution a lot faster.
+
+## Improvements to Basic Local Search
+
+The issue arises when we want to escape the local minima. One possible approach is using a *fixed length queue* that prevents 2-step cycles. This means that we would not revisit the original step that we have just visited. This does not require a lot of storage space but reduces the complexity.
