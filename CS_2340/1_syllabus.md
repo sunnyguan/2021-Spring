@@ -179,7 +179,7 @@ LW  $t6  4($a0)   # load value from $a0 to register $t6
 LW  $t7  8($a0)   # load value for the next 4 bytes to register $t7
 ADD $t5  $t6, $t7 # add the first two values and store in $t5
 SW  $t5  0($a0)   # stored the sum into the initial location
-``` 
+```
 
 Note that in this example, the first 4 bytes are for the result, the next 4 (starting from 4) for the first number, and the next four (starting from 8) is for the second number.
 
@@ -325,3 +325,6 @@ There are three different formats of instructions, but we will mostly use **R-Ty
 For example, `ADD $t6, $t7, $t8` means to add `t7` and `t8` and store the result in `t6`. 
 
 There are a ton of different operations, we'll get back to them later in real examples.
+
+$1+1=2$
+

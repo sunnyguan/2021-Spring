@@ -370,3 +370,21 @@ GSAT always outperforms Davis-Putnam in boolean expression problems. Davis-Putna
 ## Improvements to Basic Local Search
 
 The issue arises when we want to escape the local minima. One possible approach is using a *fixed length queue* that prevents 2-step cycles. This means that we would not revisit the original step that we have just visited. This does not require a lot of storage space but reduces the complexity.
+
+# Day 7: 2/10
+
+Note that from last lecture, local search starts from a complete state and makes edits to get successors.
+
+**GSAT** attempts to get out of local maxima by restarting in a random different location. However, this means that it is incomplete, but is more efficient compared to DFS.
+
+**Tabu** maintains a small queue to detect small cycles and prevent going back through already visited areas.
+
+**Simulated Annealing** allows moving downhill, but with a lower probability as time increases.
+
+**Random Walk** is very slow and not feasible for larger problems. Walk SAT performs better compared to Simulated Annealing for larger problems.
+
+## Genetic Algorithms
+
+Maintain a population of individuals, and evaluate them using a **fitness function**. From the current generation, we select pairs of individuals (that scored well) and generate new individuals (this step is called **crossover**). To introduce some noise (and get out of local maxima), we use the idea of **mutations** to introduce random noise into the new generation.
+
+**High-level Overview**: The initial population is first evaluated by the fitness function (probability determines if they would be chosen as the parent), then cross-over happens between pairs of individuals by randomly selecting a random "chopping point" and selecting the opposite portions alternatively to create two new children that are the combination of the two parents. Finally, we mutate an individual by randomly changing some of its values (if it should be mutated at all).
