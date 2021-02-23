@@ -291,3 +291,57 @@ A variation of the Butterfly Network is Benes Network, and two additional layers
 ## Graph Isomorphism
 
 Graphs $G$ and $H$ are isomorphic if each vertex can be mapped to exactly one other vertex on the opposite graph and retain the same connections. 
+
+# Day 7: 2/23
+
+## Euler Paths and Circuits
+
+**Euler Tour/Circuit**: a closed walk that includes every edge exactly once
+
+**Euler Path**: a simple path containing every edge of $G$
+
+Note that a connected graph has an Euler tour *if and only if* every vertex has an **even degree**.
+
+## Hamiltonian Paths and Circuits/Cycles
+
+**Hamiltonian Path**: simple path that passes through every vertex exactly once
+
+**Hamiltonian Circuit**: simple circuit that psses through every vertex exactly once
+
+### Dirac's Theorem
+
+If $G$ is a simple graph with $n \geq 3$ vertices such that the degree of each vertex in $G$ is $\geq n/2$, then $G$ has a Hamilton circuit.
+
+### Ore's Theorem
+
+If $G$ is a simple graph with $n \geq 3$ vertices such that `deg(u) + deg(v)` $\geq n$ for every pair of non-adjacent vertices, then $G$ has a Hamilton circuit.
+
+### Traveling Salesman Problem
+
+In a weighted graph, find the Hamiltonian circuit with the minimum possible sum of weights of edges.
+
+## Graph Coloring
+
+**Vertex Coloring**: no two adjacent vertices have same color
+
+**Edge Coloring**: all edges incident (connecting to) on a vertex must have different colors
+
+1. An even-length cycle is 2-colorable
+2. An odd-length cycle is 3-colorable
+3. A $K_n$ graph (complete graph with $n$ vertices) is $n$-colorable
+4. A graph with max degree $n$ is $(n+1)$-colorable
+    1. Note: read (induction) proof in the textbook
+
+### Exam Scheduling
+
+Use courses as vertices, and edges means that a student is taking both courses. The minimal vertex coloring for this graph is the minimum exam slots needed to avoid conflicts. 
+
+Also applicable to Access Point frequency band selection to avoid interference.
+
+## Planar Graphs
+
+**Planar**: a graph is planar when it has a planar drawing (vertices/edges drawn in 2D)
+
+**Faces**: curves in planar drawing divide plane into connected regions (continuous faces)
+
+
