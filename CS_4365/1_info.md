@@ -388,3 +388,55 @@ Note that from last lecture, local search starts from a complete state and makes
 Maintain a population of individuals, and evaluate them using a **fitness function**. From the current generation, we select pairs of individuals (that scored well) and generate new individuals (this step is called **crossover**). To introduce some noise (and get out of local maxima), we use the idea of **mutations** to introduce random noise into the new generation.
 
 **High-level Overview**: The initial population is first evaluated by the fitness function (probability determines if they would be chosen as the parent), then cross-over happens between pairs of individuals by randomly selecting a random "chopping point" and selecting the opposite portions alternatively to create two new children that are the combination of the two parents. Finally, we mutate an individual by randomly changing some of its values (if it should be mutated at all).
+
+**Note: markdown preview mode changed.**
+
+# Day 8: 2/22
+
+## Review of the **G**enetic **A**lgorithm
+
+### Inputs
+
+**Fitness**: Fitness function evaluating each individual
+
+**Fitness Threshold**: when to stop searching
+
+**p**: population size
+
+**r**: random selection rate
+
+**m**: mutation factor
+
+### Steps
+
+1. Generate $p$ random individuals
+2. Compute `fitness(i)` for each individual
+3. While `max(fitness(i)) < threshold`:
+    1. **Selection**: Select $(1-r)p$ members of $P$ to add into $P_S$
+    2. **Crossover**: Choose $r \cdot p/2$ pairs of individuals from P, apply crossover and add offsprings to $P_S$
+    3. **Mutation**: Mutate $m \cdot p$ random members of $P_S$
+    4. Set $P$ to $P_S$
+    5. Calculate `fitness(i)` for each individual in $P$
+4. Return individual in $P$ with highest fitness
+
+### Selection Methods
+
+1. **Fitness proportionate selection**: selection probability is dependent on fitness
+2. **Tournament Selection**: two individuals selected at random, choose the more fit one with probability $p$
+3. **Rank selection**: sort individuals by fitness and select with probability proportional to each individual's rank
+
+### Uniform Crossover
+
+Use coin flip to equally choose between each parent's position. If the coin is heads, copy directly to each children; otherwise, switch the numbers and copy.
+
+### Mutation
+
+**Mutation rate too low**: no diversity, too slow to find best solution and get stuck in local maxima
+
+**Mutation rate too high**: miss on good traits, not selecting best individuals for later generations
+
+This is similar to simulated annealing, where the program starts with a high mutation rate that gradually decreases as time goes on.
+
+### Notes on GA's
+
+Highly sensitive to representation, but is the best search algorithms in some domains. Crowding can occur when individuals that are much more fit than others reproduce too much, which reduces diversity. 
