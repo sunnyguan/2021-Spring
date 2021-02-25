@@ -2,6 +2,10 @@
 
 This repository will (hopefully) keep track of my notes for the Spring 2021 semester. I'll also try to document any revisions I make for future reference.
 
+## Updated Setup (Feb 22)
+
+Pandoc scripts were too bulky, so I decided to try out [Markdown Preview](https://github.com/iamcco/markdown-preview.nvim) instead. So far it works great, but there is no option to save as a PDF. New `init.vim` will be pushed to a new branch on `sunnyguan/dotfiles` soon.
+
 ## Initial Setup
 
 Each folder contains the relevant notes for one class. Notes are written in Markdown with LaTeX added in if necessary. 
