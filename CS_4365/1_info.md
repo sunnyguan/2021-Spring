@@ -440,3 +440,73 @@ This is similar to simulated annealing, where the program starts with a high mut
 ### Notes on GA's
 
 Highly sensitive to representation, but is the best search algorithms in some domains. Crowding can occur when individuals that are much more fit than others reproduce too much, which reduces diversity. 
+
+# Day 9: 2/24
+
+## Constraint Satisfaction Problem (CSP)
+
+### Definition
+
+**X**: set of n variables $X_1, X_2, X_3, \ldots$ each defined by a finite domain $D_1, D_2, D_3, \ldots$
+
+**C**: set of constraints $C_1, C_2, C_3, \ldots$ and each specifies the combinations of values for that subset
+
+**Solution**: assignment of values to the variables that satisfies all constraints
+
+### Real-World CSPs
+
+**Assignment problems:** who teaches what class. Variables would be courses so that we can guarantee each course has a professor.
+
+### Algorithm
+
+Backtracking:
+
+1. If assignment is complete, then return assignment
+2. Select one unassigned variable
+3. For each possible `value` in `Order-Domain-Values`
+    1. if `value` is consistent with constraints
+        1. Make assignment `var=value`
+        2. Call function again with updated assignment, store in result
+        3. If result is not failure, then return result
+        4. Otherwise, remove `var=value` assignment
+4. Return failure
+
+### Tiebreaker
+
+When we are selecting the next variable (step 2), we need to choose from multiple options using a tiebreaking technique.
+
+**Most Constraints Variable**: has the most constraints currently on itself
+
+**Most Constraining Variable**: has the most constraints on the remaining variables.
+
+For example, in a map-coloring probem, most contraints variable would be the region with the most number of colored neighbors; most contraining variable would be the region that will affect the most number of other regions (its neighbors).
+
+### Forward Checking
+
+Keep track of remaining legal values for unassigned variables, and terminate when there are no legal values left. 
+
+In the context of map coloring, set the first region to color $c_1$ first, then eliminate $c_1$ from all of its neighbors' domains. Repeat with other regions. 
+
+The issue with forward checking is that it only eliminates the values from *immediate* neighbors, but it does not propogate to the neighbors of neighbors, which slows down the process because it cannot detect contradictions earlier.
+
+To resolve this issue, **constraint propagation** is used. The simpliest form of propagation makes each arc from $X$ to $Y$ **consistent**.
+
+$X \rightarrow Y$ is consistent *iff* for every value of $x$ of $X$ there is some allowed $y$ in $Y$.
+
+For example (map coloring):
+
+1. $R_1$: colors $c_1, c_2$
+2. $R_2$: colors $c_2$
+
+To maintain the **arc consistency** from $R_1$ to $R_2$, we check for each possible color in Region 1:
+
+1. Color $c_1$: $R_2$ has color $c_2$, therefore this is valid
+2. Color $c_2$: $R_2$ does not have a valid color, therefore invalid
+
+### Example
+
+Variables $X, Y, Z$ with domains $0, 1$ and constraints $X \neq Y, Y = Z$.
+
+1. $X=0, Y=0$: failure
+2. $X=0, Y=1, Z=0$: failure
+3. $X=0, Y=1, Z=1$: solution, exit
