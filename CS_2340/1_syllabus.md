@@ -328,3 +328,12 @@ There are a ton of different operations, we'll get back to them later in real ex
 
 $1+1=2$
 
+# Day 6: 2/25
+
+## Architectural State
+
+Determines everything about a process:
+
+1. PC (program counter): pointing to next instruction
+2. 32 registers
+3. Memory

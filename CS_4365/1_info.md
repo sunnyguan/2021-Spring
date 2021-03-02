@@ -510,3 +510,17 @@ Variables $X, Y, Z$ with domains $0, 1$ and constraints $X \neq Y, Y = Z$.
 1. $X=0, Y=0$: failure
 2. $X=0, Y=1, Z=0$: failure
 3. $X=0, Y=1, Z=1$: solution, exit
+
+# Day 10: 3/1
+
+Went through example of backtracking.
+
+Games are good for AI because it is a structured task, does not require large amount of knowledge, and focuses on games with perfect information. 
+
+For example, Tic-Tac-Toe would start with a blank board, and at each level all the possible positions for the next player is tried. When the board is filled (or a player wins through checking the conditions), then the search ends there. 
+
+In turn based games, we can use **simple minimax** to alternate between finding the min and the max of the values in the next level. This simulates the game in the game tree and finds the best possible result for a user. This is a type of **adversarial search**.
+
+Since the search tree can be very large (chess, for example), we can cut off the search earlier and use a heuristic function to evaluate those incomplete "terminal" nodes. However, there is also a balance between the cutoff and the accuracy. If we cut off too early, then the heuristic is not as accurate at the terminal level so the overall result will not be ideal; if we cut off too late, the search tree would be too large and the time to search would be too long (time complexity). 
+
+Designing the heuristic function will be the topic of next class.
