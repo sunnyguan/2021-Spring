@@ -524,3 +524,33 @@ In turn based games, we can use **simple minimax** to alternate between finding 
 Since the search tree can be very large (chess, for example), we can cut off the search earlier and use a heuristic function to evaluate those incomplete "terminal" nodes. However, there is also a balance between the cutoff and the accuracy. If we cut off too early, then the heuristic is not as accurate at the terminal level so the overall result will not be ideal; if we cut off too late, the search tree would be too large and the time to search would be too long (time complexity). 
 
 Designing the heuristic function will be the topic of next class.
+
+# Day 11: 3/8
+
+## Knowledge Representation and Reasoning
+
+The problems before (8-queens) does not require any knowledge. However, problems like "what is the capital of the US" requires additional knowledge not present in the problem.
+
+We need to design a knowledge representation system to represent knowledge and also use reasoning to infer new information. 
+
+**Wampus World**: Reason the possible places for the pit and the weird face thing through knowledge of breeze and stench. 
+
+Human intelligence relies on background knowledge, which is difficult for machines to understand. For example, "Time flies like an arrow and fruit flies like bananas" is difficult to be parsed by a machine. 
+
+For domain knowledge in search problems, we encoded some knowledge using heuristic functions. However, it only returns a number to minimize/maximize for the search function. This is not good for a whole system of knowledge since it is too simple.
+
+**Prolog**: language that supports inference from existing knowledge.
+
+**Semantics**: Set of interpretations (truth assignments) of variables in which the sentence evaluates true
+
+**Valid sentence** (tautology): sentences where every possible combination always result in True
+
+**Models**: set of truth assignment in which all of the sentences in the KB (knowledge base) evaluates to True.
+
+**Entailment**: given a sentence $\alpha$ from the user, $\alpha$ is **entailed** by the KB is $\alpha$ is true. $kb \models \alpha$
+
+**Deduction**: KB can prove $\alpha$, then we say that KB deduced $\alpha$
+
+**Sound**: Deduced implies entailment. Intuition is that the deduced information is a subset of the entailed information, meaning that the knowledge base must be correct.
+
+**Complete**: Entailment implies deduced.
