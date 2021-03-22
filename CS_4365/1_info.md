@@ -547,10 +547,39 @@ For domain knowledge in search problems, we encoded some knowledge using heurist
 
 **Models**: set of truth assignment in which all of the sentences in the KB (knowledge base) evaluates to True.
 
-**Entailment**: given a sentence $\alpha$ from the user, $\alpha$ is **entailed** by the KB is $\alpha$ is true. $kb \models \alpha$
+**Entailment**: given a sentence $\alpha$ from the user, $\alpha$ is **entailed** by the KB if $\alpha$ is true. $kb \models \alpha$
 
 **Deduction**: KB can prove $\alpha$, then we say that KB deduced $\alpha$
 
 **Sound**: Deduced implies entailment. Intuition is that the deduced information is a subset of the entailed information, meaning that the knowledge base must be correct.
 
 **Complete**: Entailment implies deduced.
+
+# Day 12: 3/22
+
+## Knowledge Representation
+
+Two key components:
+
+1. **Knowledge base**: a set of *sentences* (facts) in some knowledge representation language
+2. **Inference/Reasoning mechanism**: derive new information based on existing info (from knowledge base)
+
+**Modus Ponens**: if $\alpha$ is true and $\alpha \implies \beta$, then $\beta$ must be true.
+
+**Soundness**: deduced means entailed, meaning that deduced information using rules must be correct when validated through the knowledge base as well.
+
+**Completeness**: entailed means deduced, meaning that whatever sentence is entailed can be deduced by the knowledge base.
+
+**Proof Theory** requires both soundness and completeness.
+
+1. $\Phi \models \alpha$
+2. $\Phi$ entails $\alpha$
+3. $\Phi, \lnot \alpha$ is inconsistent
+
+### General Resolution Rule
+
+If $(L_1 \lor L_2 \lor L_x)$ and $(\lnot L_x \lor L_3 \lor L_4)$, then $(L_1 \lor L_2 \lor L_3 \lor L_4)$
+
+### Pigeon-Hole Problem
+
+When we have these contradiction problems, we have exponential steps because we would try a ton of possible iterations without any solutions.
